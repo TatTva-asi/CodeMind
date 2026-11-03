@@ -1,5 +1,5 @@
-# define relationsip type and semanticsfrom enum import Enum
-import Enum
+# define relationsip type and semantics
+from enum import Enum
 
 class RelationshipType(str, Enum):
 
