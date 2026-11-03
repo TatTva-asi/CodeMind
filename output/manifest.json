@@ -1,0 +1,665 @@
+{
+    "repository_path": "C:\\Users\\mukes\\OneDrive\\Desktop\\codemind",
+    "generated_at": "2026-11-03T12:24:18.919001+00:00",
+    "total_files": 81,
+    "total_directories": 25,
+    "language_summary": {
+        "Unknown": 3,
+        "Python": 70,
+        "Markdown": 5,
+        "TOML": 1,
+        "Requirements": 1,
+        "PowerShell": 1
+    },
+    "files": [
+        {
+            "path": ".env.example",
+            "language": "Unknown",
+            "category": "unknown",
+            "is_programming_language": false,
+            "size_bytes": 67,
+            "sha256": "13565a20256406854682a2aaa7e9abb27877c7956f2f83bdd99545e2876ca2be"
+        },
+        {
+            "path": ".gitattributes",
+            "language": "Unknown",
+            "category": "unknown",
+            "is_programming_language": false,
+            "size_bytes": 11,
+            "sha256": "459e7c172cef04014c22e56be39d6f344bb7b801b730a930484f910701a2c52b"
+        },
+        {
+            "path": ".gitignore",
+            "language": "Unknown",
+            "category": "unknown",
+            "is_programming_language": false,
+            "size_bytes": 68,
+            "sha256": "292a48300866130e6aced354209cc8329dabba2cb049cd4b68cb06059894def4"
+        },
+        {
+            "path": "app/__init__.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/api/__init__.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/api/main.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/cli.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/evaluation/__init__.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/evaluation/answer_evaluator.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/evaluation/dataset.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/evaluation/experiments.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/evaluation/graph_metrics.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/evaluation/retrieval_metrics.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/graph/__init__.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/graph/builder.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/graph/dependency_models.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/graph/relationships.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/graph/traversal.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/indexing/__init__.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/indexing/code_chunker.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/indexing/embedding_index.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/indexing/hierarchy.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/indexing/symbol_index.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/ingestion/__init__.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/ingestion/file_scanner.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 2930,
+            "sha256": "0aa7bbb3ec767ab01d999a57aa9b4c975367e86b7cf9c28506d42662f6e84d12"
+        },
+        {
+            "path": "app/ingestion/hasher.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 530,
+            "sha256": "4f21d11e5cfc8a6ea49c9944725b5fcc52a967d962626ab40688d99d5440273b"
+        },
+        {
+            "path": "app/ingestion/ignore_rules.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 5028,
+            "sha256": "5d2045dff4bac3ee9fc8314adb2a116b8f128fdbe14c326a9075a1cc7e89caae"
+        },
+        {
+            "path": "app/ingestion/language_detector.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 3257,
+            "sha256": "99a9b29ab2ab983b99ed9b8a5512cf065ec50da6a5345f883cc0f5f094acccc0"
+        },
+        {
+            "path": "app/ingestion/manifest.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 3391,
+            "sha256": "7aa06967fdcba78c6c9db352d9ddcd7745ac8bfddfdcfe6f7c0ba5fb9229fff5"
+        },
+        {
+            "path": "app/ingestion/repository.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 2025,
+            "sha256": "f4e85a5d527331cc5210a42e7bd6c5b90755afb05fec37b67c71cc424d756b05"
+        },
+        {
+            "path": "app/integrations/__init__.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/integrations/change_detector.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/integrations/git_manager.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/integrations/github_client.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/integrations/incremental_indexer.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/__init__.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/answer_schema.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/call_chain.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/citation_validator.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/code_qa.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/context_builder.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/dependency_analyzer.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/entrypoint_detector.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/execution_flow.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/impact_analysis.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/impact_report.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/query_router.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/risk_scorer.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/intelligence/workflow_reconstructor.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/parsing/__init__.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/parsing/import_extractor.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/parsing/parser_models.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/parsing/python_parser.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/parsing/symbol_extractor.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/retrieval/__init__.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/retrieval/bm25.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/retrieval/dense.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/retrieval/fusion.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/retrieval/hybrid.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "app/retrieval/reranker.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "architecture/data-model.md",
+            "language": "Markdown",
+            "category": "documentation",
+            "is_programming_language": false,
+            "size_bytes": 104,
+            "sha256": "8d2c7e5ceba298d8e02bf15019b3a700d85af2918bfd47efbd2fb41d72d1d108"
+        },
+        {
+            "path": "architecture/decisions/ADR-001-architecture.md",
+            "language": "Markdown",
+            "category": "documentation",
+            "is_programming_language": false,
+            "size_bytes": 131,
+            "sha256": "48c513e225ab80fadacf668697e23f84cc3250984a282cef22d80f7c6f384a82"
+        },
+        {
+            "path": "architecture/requirements.md",
+            "language": "Markdown",
+            "category": "documentation",
+            "is_programming_language": false,
+            "size_bytes": 90,
+            "sha256": "2200838d3ab124bab6126e49cef4f23cfb1855a565b7efc868c54fce180f38a3"
+        },
+        {
+            "path": "architecture/system-design.md",
+            "language": "Markdown",
+            "category": "documentation",
+            "is_programming_language": false,
+            "size_bytes": 77,
+            "sha256": "a99b6108b25526bf560e8f586430f3fc462049b669895ae680d2d481b5cee741"
+        },
+        {
+            "path": "main.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 669,
+            "sha256": "e243f10a138a83537cbe81ad61ed235a2b8e5dc1df2a463b0427b911708e9611"
+        },
+        {
+            "path": "pyproject.toml",
+            "language": "TOML",
+            "category": "configuration",
+            "is_programming_language": false,
+            "size_bytes": 145,
+            "sha256": "91ccf13d0fbcae185e6c9d9b3b6c920ab475fdc9af4ef37c1dc96306eaf8c191"
+        },
+        {
+            "path": "README.md",
+            "language": "Markdown",
+            "category": "documentation",
+            "is_programming_language": false,
+            "size_bytes": 82,
+            "sha256": "c9b89ddf15c79a0e2495bc5db74a2f9a08cad2c86bb136cf258236648f381c3f"
+        },
+        {
+            "path": "requirements.txt",
+            "language": "Requirements",
+            "category": "configuration",
+            "is_programming_language": false,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "setup_codemind.ps1",
+            "language": "PowerShell",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 4970,
+            "sha256": "749b98e2e517cc6398335ef086ec075621b12eb630e22ec7d153bbd763eaf755"
+        },
+        {
+            "path": "tests/graph/test_builder.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "tests/indexing/test_code_chunker.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "tests/ingestion/ignore_rules.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 1677,
+            "sha256": "8fb222bb38d6e2b357dbfdcacfc94b400787f7446a41610735d4aea925cd60d7"
+        },
+        {
+            "path": "tests/ingestion/test_file_scanner.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 1518,
+            "sha256": "f1cb651418c3ec05118494b2831a80209fdcfc170e9e53c33dc44ea81ca1637e"
+        },
+        {
+            "path": "tests/ingestion/test_hasher.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 1407,
+            "sha256": "2cf390e01ba76797b65801549fd0131cedd0833028803bff6ef6ab815d2754f3"
+        },
+        {
+            "path": "tests/ingestion/test_language_detector.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 875,
+            "sha256": "fb67781db993c4c9f4380aadcb6e2ab9c8f3778bd1b6ec15a0ad70e862934c61"
+        },
+        {
+            "path": "tests/ingestion/test_manifest.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "tests/intelligence/test_code_qa.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "tests/parsing/test_python_parser.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "tests/parsing/test_symbol_extractor.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "tests/retrieval/test_bm25.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "path": "tests/retrieval/test_hybrid.py",
+            "language": "Python",
+            "category": "source",
+            "is_programming_language": true,
+            "size_bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+    ],
+    "errors": []
+}
