@@ -1,0 +1,302 @@
+# CodeMind — Technical Documentation
+
+**Project:** Intelligent Software Engineering & Codebase Intelligence Platform  
+**Language:** Python  
+**Current scope:** Repository ingestion, content processing, AST parsing and initial semantic analysis.
+
+---
+
+## 1. Project Overview
+
+CodeMind is an intelligent software engineering platform designed to understand software repositories beyond ordinary text-based code search.
+
+Its long-term capabilities include:
+
+- Repository ingestion and parsing.
+- Code-aware chunking and symbol indexing.
+- Dense, lexical and hybrid retrieval.
+- Dependency and knowledge graphs.
+- Repository-level question answering with source citations.
+- Execution-flow and architecture understanding.
+- Change impact analysis.
+- GitHub integration and incremental indexing.
+- Intelligent pull request reviews.
+- Evaluation, benchmarking and research experiments.
+
+The current development focuses on building the foundational repository understanding layer.
+
+## 2. Architecture
+
+### Layer 1 — Repository Ingestion
+
+Location: `app/ingestion/`
+
+Responsible for discovering repository files, excluding irrelevant content, detecting languages, calculating file hashes and generating repository metadata.
+
+#### Modules
+
+**ignore_rules.py**
+- Maintains default ignored directories and files.
+- Supports additional user-defined glob patterns.
+- Normalizes repository-relative paths.
+- Determines whether a file or directory should be excluded.
+
+**file_scanner.py**
+- Uses iterative directory traversal with `os.scandir()`.
+- Discovers files and directories.
+- Applies ignore rules before entering directories.
+- Skips symbolic links.
+- Records filesystem errors.
+- Returns a `ScanResult`.
+
+**language_detector.py**
+- Maps file extensions to programming languages.
+- Recognizes special filenames such as Dockerfile and Makefile.
+- Classifies files into source, documentation, configuration, markup and unknown categories.
+
+**hasher.py**
+- Uses SHA-256.
+- Reads files in chunks instead of loading entire files into memory.
+- Produces deterministic content fingerprints.
+- Provides the foundation for incremental indexing.
+
+**manifest.py**
+Defines:
+- `FileMetadata`
+- `RepositoryManifest`
+- `ManifestGenerator`
+
+The manifest contains repository location, generation timestamp, file counts, directory counts, language statistics, file paths, sizes, languages and SHA-256 hashes.
+
+It supports JSON serialization.
+
+**repository.py**
+- Implements `RepositoryIngestor`.
+- Initializes ingestion components.
+- Coordinates scanning and metadata generation.
+- Optionally saves the repository manifest.
+
+### Layer 2 — Content Processing
+
+Location: `app/parsing/`
+
+Responsible for determining whether files can be processed as text and safely extracting their contents.
+
+**content_classifier.py**
+- Identifies known binary extensions.
+- Checks null bytes and control-character ratios.
+- Performs basic UTF-8 validation.
+- Returns a structured classification result.
+
+**file_reader.py**
+- Enforces a configurable maximum file size.
+- Reads file contents in binary mode.
+- Classifies content before decoding.
+- Supports UTF-8 and UTF-8 BOM.
+- Returns structured success and error statuses.
+
+Current default maximum file size: 2 MB.
+
+### Layer 3 — Syntax Parsing
+
+Location: `app/parsing/`
+
+Responsible for converting source code into structured syntax information.
+
+**parser_models.py**
+
+Defines:
+- `Symbol`: Represents a function, class or method.
+- `Import`: Represents an import declaration.
+- `ParsedFile`: Represents the parsing result of a file.
+
+**parser_registry.py**
+- Maintains registered language parsers.
+- Selects a parser based on the language.
+- Provides a common parsing interface.
+
+**python_parser.py**
+- Uses Python's built-in `ast` module.
+- Converts source code into an AST.
+- Coordinates symbol and import extraction.
+- Handles syntax errors.
+
+**symbol_extractor.py**
+Uses `ast.NodeVisitor` to extract:
+- Classes.
+- Functions.
+- Methods.
+- Asynchronous functions.
+- Qualified names.
+- Source line ranges.
+- Signatures.
+- Docstrings.
+- Decorators.
+
+**import_extractor.py**
+Extracts:
+- Imported modules.
+- Imported names.
+- Aliases.
+- Source line numbers.
+- Relative import information.
+
+### Layer 4 — Semantic Analysis
+
+Location: `app/parsing/`
+
+Responsible for extracting relationships and basic semantic information from source code.
+
+**semantic_models.py**
+
+Defines:
+- `ImportReference`
+- `CallReference`
+- `InheritanceReference`
+- `TypeFact`
+- `ExecutionEvent`
+- `SemanticAnalysisResult`
+
+**python_semantic_analyser.py**
+
+The initial analyzer accepts a mapping of repository-relative file paths to Python source strings.
+
+It implements preliminary versions of:
+
+1. Repository module indexing.
+2. Import resolution.
+3. Function call candidate detection.
+4. Class inheritance candidate detection.
+5. Basic annotation and assignment-based type inference.
+6. Module-level execution-event extraction.
+
+The results are stored in `SemanticAnalysisResult`.
+
+## 3. End-to-End Workflow
+
+The intended processing sequence is:
+
+1. Receive a local repository path.
+2. Initialize repository ingestion.
+3. Apply exclusion rules.
+4. Discover relevant files and directories.
+5. Detect file languages.
+6. Calculate file hashes.
+7. Generate the repository manifest.
+8. Classify file contents.
+9. Read supported text files.
+10. Select the appropriate language parser.
+11. Generate AST representations.
+12. Extract symbols and imports.
+13. Perform semantic analysis.
+14. Store structured results for indexing and graph construction.
+
+**Current integration status:** Steps 1–7 are coordinated through `RepositoryIngestor`. Content processing and parsing have separate implementations. Semantic analysis has a separate multi-file input interface. The complete sequence has not yet been integrated.
+
+## 4. Important Engineering Decisions
+
+### Separation of responsibilities
+
+Different modules have separate responsibilities rather than placing all logic in one large Python file.
+
+### Iterative directory traversal
+
+The scanner uses a stack to avoid Python recursion-depth limitations and supports directory pruning.
+
+### Repository-relative paths
+
+Paths are normalized to POSIX-style separators for portability and consistent identification.
+
+### SHA-256 hashing
+
+Content hashes allow future detection of modified files and unnecessary reprocessing.
+
+### Structured metadata
+
+Dataclasses provide consistent data models for communication between components.
+
+### AST-based parsing
+
+Syntax-aware extraction is preferred over regular expressions because it handles nested syntax and structural relationships.
+
+### Parser registry
+
+The parser registry separates language selection from language-specific parsing logic.
+
+### Explicit resolution confidence
+
+Semantic analysis distinguishes resolved, candidate and unresolved relationships. Static analysis should not claim certainty when evidence is insufficient.
+
+## 5. Incremental Indexing Foundation
+
+The repository manifest stores file paths and hashes.
+
+Comparing two manifests can identify:
+
+- Added files: present only in the new manifest.
+- Deleted files: present only in the previous manifest.
+- Modified files: same path, different hash.
+- Unchanged files: same path, same hash.
+- Possible renames: different paths with matching hashes.
+
+Matching hashes do not prove a rename because identical files may have been copied.
+
+This functionality is a foundation for future incremental indexing, not yet a completed incremental indexing engine.
+
+## 6. Current Limitations
+
+The existing implementation is a foundational prototype.
+
+### Ingestion
+- Gitignore compatibility is incomplete.
+- Glob matching does not fully implement Gitignore semantics.
+- Race conditions and filesystem changes require further handling.
+- Large-repository performance needs benchmarking.
+
+### Content processing
+- UTF-8 is currently supported, not arbitrary encoding detection.
+- Content classification uses heuristics.
+- Maximum file size is configurable but not yet adaptive.
+
+### Parsing
+- Python is the initial supported parser.
+- Other language parsers have not been implemented.
+- Parser output needs further normalization.
+
+### Semantic analysis
+- Import resolution is preliminary.
+- Relative imports and namespace packages need stronger handling.
+- Function-call resolution is not fully scope-aware.
+- Inheritance matching needs qualified-name resolution.
+- Type inference is heuristic and limited.
+- Execution events do not constitute a complete control-flow graph.
+- Runtime behavior cannot generally be determined through static analysis alone.
+
+## 7. Next Development Priorities
+
+Recommended order:
+
+1. Strengthen repository-wide symbol resolution.
+2. Implement reliable import and alias resolution.
+3. Improve function-call and inheritance resolution.
+4. Implement control-flow graphs.
+5. Develop more advanced data-flow and type analysis.
+6. Integrate semantic relationships with `app/graph/`.
+7. Implement code-aware chunking.
+8. Develop symbol and chunk indexing.
+9. Implement hybrid retrieval and reranking.
+10. Build evaluation and benchmarking workflows.
+
+## 8. Development Principles
+
+- Understand engineering decisions before implementing them.
+- Keep modules independently testable.
+- Avoid duplicate implementations of the same responsibility.
+- Preserve source paths and line numbers for traceability.
+- Distinguish verified results from heuristic candidates.
+- Evaluate retrieval and analysis quality instead of assuming correctness.
+- Avoid claiming research novelty without comparison to existing work.
+
+---
+
+**Current milestone:** Foundational repository ingestion, content processing, Python AST parsing and initial static semantic analysis.
