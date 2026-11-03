@@ -173,6 +173,13 @@ class _FileAnalyzer(ast.NodeVisitor):
 
         return ".".join(self.scope) or "<module>"
 
+    def current_qualified_scope(self):
+
+        if self.scope:
+            return ".".join([self.module] + self.scope)
+
+        return self.module
+
     # ---------------- MODULE RESOLUTION ----------------
 
     def resolve_module(self, module):
@@ -381,7 +388,7 @@ class _FileAnalyzer(ast.NodeVisitor):
     def visit_ClassDef(self, node):
 
         qualified_name = ".".join(
-            self.scope + [node.name]
+            [self.module] + self.scope + [node.name]
         )
 
         for base in node.bases:
@@ -666,7 +673,7 @@ class _FileAnalyzer(ast.NodeVisitor):
         self.calls.append(
             CallReference(
                 source_file=self.file_path,
-                caller=self.current_scope(),
+                caller=self.current_qualified_scope(),
                 expression=ast.unparse(node.func),
                 line=node.lineno,
                 candidate_targets=candidates,

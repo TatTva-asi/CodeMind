@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from hashlib import sha256
 
 
 @dataclass
@@ -19,6 +20,11 @@ class CallReference:
     line: int
     candidate_targets: list[str] = field(default_factory=list)
     status: str = "unresolved"
+
+    @property
+    def caller_id(self) -> str:
+        identity = f"{self.source_file}:{self.caller}"
+        return sha256(identity.encode("utf-8")).hexdigest()
 
 
 @dataclass
