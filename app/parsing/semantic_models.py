@@ -1,4 +1,3 @@
-
 from dataclasses import dataclass, field
 
 
@@ -9,6 +8,7 @@ class ImportReference:
     names: list[str] = field(default_factory=list)
     resolved_file: str | None = None
     status: str = "unresolved"
+    aliases: dict[str, str] = field(default_factory=dict)
 
 
 @dataclass
