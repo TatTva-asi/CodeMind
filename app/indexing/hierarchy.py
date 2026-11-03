@@ -1,15 +1,24 @@
 
+# app/indexing/hierarchy.py
+
+# we have functions like add_chunk(), get_chunk(), get_parent(), get_children(), get_descendents() we used iterative stack based traversal rather than recursive traversal
+
+from app.indexing.code_chunker import CodeChunk
+
+
 class ChunkHierarchy:
 
     def __init__(self):
-        self.chunks = {}
+        self.chunks: dict[str, CodeChunk] = {}
 
-    def add_chunk(self, chunk):
+    def add_chunk(self, chunk: CodeChunk) -> None:
 
         if chunk.chunk_id in self.chunks:
             raise ValueError(
                 f"Duplicate chunk ID: {chunk.chunk_id}"
             )
+
+        parent = None
 
         if chunk.parent_id is not None:
 
@@ -27,13 +36,13 @@ class ChunkHierarchy:
 
         self.chunks[chunk.chunk_id] = chunk
 
-        if chunk.parent_id is not None:
+        if parent is not None:
             parent.child_ids.append(chunk.chunk_id)
 
-    def get_chunk(self, chunk_id):
+    def get_chunk(self, chunk_id: str) -> CodeChunk | None:
         return self.chunks.get(chunk_id)
 
-    def get_parent(self, chunk_id):
+    def get_parent(self, chunk_id: str) -> CodeChunk | None:
 
         chunk = self.get_chunk(chunk_id)
 
@@ -42,7 +51,7 @@ class ChunkHierarchy:
 
         return self.get_chunk(chunk.parent_id)
 
-    def get_children(self, chunk_id):
+    def get_children(self, chunk_id: str) -> list[CodeChunk]:
 
         chunk = self.get_chunk(chunk_id)
 
@@ -55,18 +64,35 @@ class ChunkHierarchy:
             if child_id in self.chunks
         ]
 
-    def get_descendants(self, chunk_id):
+    def get_descendants(self, chunk_id: str) -> list[CodeChunk]:
+
+        if chunk_id not in self.chunks:
+            return []
 
         descendants = []
+        visited = set()
+        stack = list(reversed(
+            self.chunks[chunk_id].child_ids
+        ))
 
-        def traverse(current_id):
+        while stack:
 
-            for child in self.get_children(current_id):
+            current_id = stack.pop()
 
-                descendants.append(child)
+            if current_id in visited:
+                continue
 
-                traverse(child.chunk_id)
+            visited.add(current_id)
 
-        traverse(chunk_id)
+            current_chunk = self.chunks.get(current_id)
+
+            if current_chunk is None:
+                continue
+
+            descendants.append(current_chunk)
+
+            stack.extend(
+                reversed(current_chunk.child_ids)
+            )
 
         return descendants
