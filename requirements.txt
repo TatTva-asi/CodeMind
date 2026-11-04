@@ -1,0 +1,5 @@
+ -U chromadb 
+ sentence-transformers 
+ langsmith
+  rank-bm25 
+  python-dotenv pydantic
